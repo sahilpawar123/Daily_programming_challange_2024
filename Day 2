@@ -1,0 +1,33 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+void missing_ele(vector<int> v)
+{
+    for(int i=0 ; i<v.size() ; i++)
+    {
+        int index = v[i] -1;
+        if(v[index]>0)
+        {
+            v[index]  = (-1)*v[index];
+        }
+        else{
+            i++;
+        }
+    }
+    for(int i=0 ; i<v.size(); i++)
+    {
+        if(v[i]>0)
+        {
+            cout<<i+1<<" ";
+        }
+    }
+}
+int main()
+{
+    vector<int> v{1,2,4,5};
+    missing_ele(v);
+    return 0;
+
+}
+
+
