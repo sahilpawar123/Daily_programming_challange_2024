@@ -1,0 +1,38 @@
+/*Find the duplicate number
+You are given an array arr containing n+1 integers, where each integer is in the range [1, n] inclusive. There is exactly one duplicate number in the array, but it may appear more than once. 
+Your task is to find the duplicate number without modifying the array and using constant extra space.
+ip = 1,4,4,2,3
+op =   4, 
+and other test case also */
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+ int duplicate(vector<int> v)
+{
+    vector<int> b;
+    for(int i=0; i<v.size() ; i++)
+    {
+        int index = abs(v[i]);
+        if(v[index] > 0)
+        {
+            v[index] = -v[index];
+        }
+        else {
+            return index;
+        }
+
+    }
+return -1;
+ 
+           
+   
+}
+int main()
+{
+    vector<int> v{ 1,4,4,2,3};
+    int a = duplicate(v);
+     cout<<a;
+return 0;
+}
